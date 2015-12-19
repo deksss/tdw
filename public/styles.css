@@ -1,0 +1,616 @@
+html, body {
+    height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.turn {
+  position: relative;
+  left: 150px;
+  top: 200px;
+  background-color: grey;
+  opacity: 0.9;
+  font-size: 3em;
+  margin-top: -200px;
+  z-index: 99999;
+  width: 300px;
+  height: 200px;
+  color: white;
+}
+
+.deck {
+  background-color: white;
+}
+.end-game {
+  position: relative;
+  left: 200px;
+  top: 300px;
+  background-color: red;
+  opacity: 0.9;
+  font-size: 3em;
+  margin-top: -60px;
+  z-index: 99999;
+  width: 300px;
+  color: white;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: space-between;
+  height: 100%;
+  background-image: url("assets/bord-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.game-container-main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+
+.game-container-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 1em;
+  background-image: url("assets/field-blood.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.hand-up {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid grey;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.hand-dwn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-top: 1px solid grey;
+  width: auto;
+  margin-top: 1rem;
+}
+
+#myCard1 {
+            transform: rotate(-11deg);
+            margin-bottom:-0.7rem;
+}
+
+#myCard2 {
+            transform: rotate(-5deg);
+        
+}
+
+#myCard3 {
+            transform: rotate(1deg);
+       
+}
+
+#myCard4 {
+            transform: rotate(7deg);        
+            margin-bottom:-0.2rem;
+}
+
+#myCard5 {
+            transform: rotate(10deg);         
+            margin-bottom:-0.9rem;
+}
+
+#myCard1:hover,
+#myCard2:hover,
+#myCard3:hover,
+#myCard4:hover,
+#myCard5:hover,  {
+   transform: rotate(0deg);         
+}
+
+
+
+.hand-active {
+  border: 1px solid red;
+  width: auto;
+}
+
+.ememy-info {}
+
+.game-info-main {}
+
+
+.player-info {}
+
+.card-container:hover {
+  overflow: visible;
+}
+
+.card-container {
+  overflow: visible;
+}
+
+.card-selected {
+      border:1px solid red !important;
+  }
+.card .unit {
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 90% 90%;
+}
+
+.card  {
+  z-index: 1;
+  background-image: url("assets/card-framed.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+   margin-right:-2rem;
+}
+
+  .card:hover {
+    margin-top: -53%; 
+    transition: all 0.2s ease-in-out;
+    z-index:999;
+    position: relative;
+}
+
+#myCard2 {
+            transform: rotate(-5deg);
+        
+}
+
+#myCard3 {
+            transform: rotate(1deg);
+       
+}
+
+#myCard4 {
+            transform: rotate(7deg);        
+            margin-bottom:-0.2rem;
+}
+
+#myCard5 {
+            transform: rotate(10deg);         
+            margin-bottom:-0.9rem;
+}
+  }
+ 
+ .card-selected {
+      border:1px solid red !important;
+  }
+
+.card-info {
+  height: 34%;
+  text-align:center;
+  padding: 0.2em;
+  font-size: 0.8em;
+}
+
+.cell {
+  margin: 0.5em;
+}
+
+.card-enemy {
+    background-color: grey;
+    border: 1px solid white;
+  }
+
+@media screen and (min-height: 440px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+  }
+  .card-container {
+    width: 80px;
+    height: 80px;
+  }
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+  .card-enemy {
+    width: 40px;
+    height: 60px;
+  }
+  .atk-arrows {}
+}
+
+@media screen and (min-height: 700px) {
+  .cell {
+    width: 120px;
+    height: 120px;
+  }
+  .card-container {
+    width: 120px;
+    height: 120px;
+  }
+  .card {
+    width: 122px;
+    height: 180px;
+  }
+  .card-enemy {
+    width: 100px;
+    height: 148px;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .cell {
+    width: 200px;
+    height: 200px;
+  }
+  .card-container {
+    width: 200px;
+    height: 200px;
+  }
+  .card {
+    width: 200px;
+    height: 295px;
+  }
+  .card-enemy {
+    width: 122px;
+    height: 180px;
+  }
+}
+
+.unit {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+}
+
+.unit-dead {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+  -webkit-filter: blur(3px); 
+  filter: blur(3px); 
+  -webkit-filter: brightness(34%); 
+  filter: brightness(34%); 
+}
+
+.card .unit {
+  height: 66%;
+}
+
+.unit-dead {
+  -webkit-filter: grayscale(0.5);
+  filter: grayscale(0.5);
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-filter: brightness(34%);
+  filter: brightness(34%);
+}
+
+.unit-info {
+  position:relative;
+  left:0px;
+  top: -40px;
+  opacity: 0;
+  width:120px;
+  height:40px;
+  z-index:9999;
+  background-color: white;
+}
+
+.atk-arrows {
+  opacity: 0;
+  background-repeat: no-repeat;
+}
+
+.atk-arrows-big {
+  width: 17%;
+  height: 100%;
+  float: left;
+}
+
+.atk-arrows-side {
+  width: 17%;
+  height: 26%;
+  float: left;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
+.unit-top {
+  width: 100%;
+  height: 15%;
+}
+
+.unit-mid {
+  width: 100%;
+  height: 70%;
+}
+
+.unit-foot {
+  width: 100%;
+  height: 15%;
+}
+
+.unit-top-ul {
+  background-position: 0 0;
+}
+
+.unit-top-ur {
+  background-position: 15% 0;
+}
+
+.unit-top-u {
+  background-position: 85% 0;
+  width: 17%;
+  height: 100%;
+  margin-left: 24%;
+  margin-right: 24%;
+  float: left;
+}
+
+.unit-mid-l {
+  background-position: 58% 0;
+}
+
+.unit-mid-r {
+  background-position: 71% 0;
+}
+
+.unit-foot-dl {
+  background-position: 29% 0;
+}
+
+.unit-foot-dr {
+  background-position: 43% 0;
+}
+
+.unit-foot-d {
+  width: 17%;
+  height: 100%;
+  background-position: 99% 99%;
+  float: left;
+}
+
+
+
+.unit-mid-c {
+  width: 66%;
+  height: 100%;
+  float: left;
+}
+
+
+
+.unit-mid-c-hp {
+  color: red;
+  font: 1em Arial, sans-serif;
+  text-shadow: silver 1px 1px 0, silver -1px -1px 0, silver -1px 1px 0, silver 1px -1px 0;
+  text-align: left;
+  width: 24%;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+.unit-mid-c-clear {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.unit-mid-c-dpt {
+  color: silver;
+  font: 1em Arial, sans-serif;
+  text-shadow: blue 1px 1px 0, blue -1px -1px 0, blue -1px 1px 0, blue 1px -1px 0;
+  text-align: right;
+  width: 24%;
+  height: 100%;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+
+ .score-bar {
+      background-color: white;
+      margin-left:20px
+  }
+  .log-bar-head {
+      height: 45px;
+      background-color: white;
+  }
+  .log-bar-main {
+      background-color: white;
+      padding-left: 2px;
+      padding-top: 2px;
+      overflow-y: scroll;
+      height: 300px;
+      width:200px;
+  }
+
+  .anim-atk-r {
+  position: relative;
+  animation: atk-r 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-l {
+  position: relative;
+  animation: atk-l 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-u {
+  position: relative;
+  animation: atk-u 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-d {
+  position: relative;
+  animation: atk-d 0.4s linear 0.1s 1;
+  z-index: 999;
+    z-index: 999;
+}
+
+.anim-atk-u-r {
+  position: relative;
+  animation: atk-u-r 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-u-l {
+  position: relative;
+  animation: atk-u-l 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-d-r {
+  position: relative;
+  animation: atk-d-r 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+.anim-atk-d-l {
+  position: relative;
+  animation: atk-d-l 0.4s linear 0.1s 1;
+    z-index: 999;
+}
+
+@keyframes atk-r {
+  0% {
+   transform: translate(10px, 0);
+  }
+  50% {
+   transform: translate(20px, 0);
+  }
+  100% {
+    transform: translate(30px, 0);
+  }
+}
+
+@keyframes atk-l {
+  0% {
+   transform: translate(-10px, 0);
+  }
+  50% {
+   transform: translate(-20px, 0);
+  }
+  100% {
+    transform: translate(-30px, 0);
+  }
+}
+
+@keyframes atk-u {
+  0% {
+   transform: translate(0, -10px);
+  }
+  50% {
+   transform: translate(0, -20px);
+  }
+  100% {
+    transform: translate(0, -30px);
+  }
+}
+
+@keyframes atk-d {
+  0% {
+   transform: translate(0, 10px);
+  }
+  50% {
+   transform: translate(0, 20px);
+  }
+  100% {
+    transform: translate(0, 30px);
+  }
+}
+
+@keyframes atk-d-l {
+  0% {
+   transform: translate(-10px, 10px);
+  }
+  50% {
+   transform: translate(-20px, 20px);
+  }
+  100% {
+    transform: translate(-30px, 30px);
+  }
+}
+
+@keyframes atk-d-r {
+  0% {
+   transform: translate(10px, 10px);
+  }
+  50% {
+   transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(30px, 30px);
+  }
+}
+
+@keyframes atk-u-r {
+  0% {
+   transform: translate(10px, -10px);
+  }
+  50% {
+   transform: translate(20px, -20px);
+  }
+  100% {
+    transform: translate(30px, -30px);
+  }
+}
+
+@keyframes atk-u-l {
+  0% {
+   transform: translate(-10px, -10px);
+  }
+  50% {
+   transform: translate(-20px, -20px);
+  }
+  100% {
+    transform: translate(-30px, -30px);
+  }
+}

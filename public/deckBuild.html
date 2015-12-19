@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>   
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="nprogress.css" /> 
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <title>Deck Builder</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="deck-build.css">
+    </head>  
+    <body>
+    <div class="card card-neutral" id="exampleElem">
+            <div class="unit">
+         <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+        </div>
+
+
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="renderCard.js"></script>
+        <script type="text/javascript" src="deckBuild.js"></script>
+    </body>
+
+</html>

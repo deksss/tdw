@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="nprogress.js"></script>
+        <link rel="stylesheet" type="text/css" href="nprogress.css" /> 
+     
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <title>card game</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <form id="start" action="" method="POST" class="text-center">
+            <div class="radio">
+  <label><input type="radio" id="commander"  name="optradio" >Commander</label>
+</div>
+<div class="radio">
+  <label><input type="radio" id="mage"  name="optradio">Mage</label>
+</div>
+<div class="radio">
+  <label><input type="radio"  id="madDoctor" name="optradio" >Mad doctor</label>
+</div>
+            <div class="text-center">
+                <input type="submit" class="btn btn-lg btn-primary" value="Start" />
+            </div>
+        </form>
+<div id="yourTurn" class="turn hidden">Your turn!</div>
+ <div id="endGame" class="end-game hidden"></div>
+<div class="game-container hidden" id="game">
+  <div class="game-container-main">
+    <div class="hand-up" id="hand-enemy">
+      <div class="card-enemy" id="enemyCard1"></div>
+      <div class="card-enemy" id="enemyCard2"></div>
+      <div class="card-enemy" id="enemyCard3"></div>
+      <div class="card-enemy" id="enemyCard4"></div>
+      <div class="card-enemy" id="enemyCard5"></div>
+    </div>
+    <div class="field" id="game-field">
+      <div class="row">
+        <div class="cell">
+          <div class="unit" id="00">
+            <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="01">
+             <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="02">
+     <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="unit" id="10">
+       <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="11">
+                <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="12">
+               <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="unit" id="20">
+            <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="21">
+             <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="unit" id="22">
+               <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            <div class="unit-info"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+      <div class="hand-dwn" id="player-hand">
+        <div class="card-container">
+          <div class="card" id="myCard1">
+            <div class="unit">
+     <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card" id="myCard2">
+            <div class="unit">
+          <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card" id="myCard3">
+            <div class="unit">
+     <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card" id="myCard4">
+            <div class="unit">
+     <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card" id="myCard5">
+            <div class="unit">
+         <div class="unit-top">
+              <div class="atk-arrows atk-arrows-big unit-top-ul"></div>
+              <div class="atk-arrows unit-top-u"></div>
+              <div class="atk-arrows atk-arrows-big unit-top-ur"></div>
+            </div>
+            <div class="unit-mid">
+              <div class="atk-arrows atk-arrows-side unit-mid-l"></div>
+              <div class="unit-mid-c">              
+                <div class="unit-mid-c-clear"></div>
+              </div>
+              <div class="atk-arrows atk-arrows-side unit-mid-r"></div>
+            </div>
+            <div class="unit-foot">
+              <div class="atk-arrows atk-arrows-big unit-foot-dl"></div>
+               <div class="unit-mid-c-hp"></div>
+              <div class="atk-arrows unit-foot-d"></div>
+               <div class="unit-mid-c-dpt"></div>
+              <div class="atk-arrows atk-arrows-big unit-foot-dr"></div>
+            </div>
+            </div>
+            <div class="card-info"></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="game-container-info">
+    <div class="ememy-info">
+     <div class="deck enemy-deck" id="enemyDeck"></div>
+    </div>
+    <div class="score-bar" id="info"> 
+    </div>
+    <div class="log-bar-main" id="log"> 
+    </div>
+
+    <a href="#" id="endTurn" class="btn btn-lg btn-success center-block disabled">End Turn</a>
+
+    <div class="player-info">
+    <div class="deck player-deck" id="playerDeck"></div>
+    </div>
+  </div>
+
+</div>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+                <script>
+ $('body').show();
+ NProgress.start();
+ setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+ </script>
+        <script>
+            
+        </script>
+        <script type="text/javascript" src="game.js"></script>
+    </body>
+
+</html>
